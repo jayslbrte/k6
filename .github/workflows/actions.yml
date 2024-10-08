@@ -29,8 +29,19 @@ jobs:
 
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
       - name: Install K6
-        run: |
+        run: >
           brew install k6
+
+          echo >> /home/runner/.bashrc 
+
+          echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>
+          /home/runner/.bashrc 
+
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" 
+
+          sudo apt-get install build-essential
+
+          brew install gcc
       - name: Run K6 Load Test
         run: |
           k6 run pestore_k6.js
