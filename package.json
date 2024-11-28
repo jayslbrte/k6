@@ -1,0 +1,11 @@
+{
+  "name": "k6",
+  "version": "1.0.0",
+  "description": "This is a performance testing exercise using postman collections API source: https://petstore.swagger.io/#/ tool used for performance: https://grafana.com/docs/k6/latest/get-started/running-k6/",
+  "main": "petstore_k6.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

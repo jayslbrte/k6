@@ -1,5 +1,6 @@
 import http from "k6/http";
 import { check, sleep } from "k6";
+import { generateData } from "./generateData.js";
 
 export const options = {
   // A number specifying the number of VUs to run concurrently.
@@ -12,6 +13,23 @@ export const options = {
     { duration: "20s", target: 0 },
   ],
 };
+
+const url = "https://petstore.swagger.io/v2/pet";
+
+const payload = generateData();
+
+const data = JSON.stringify(payload);
+
+const params = {
+  headers: {
+    "Content-Type": "application/json",
+    accept: "application/json",
+  },
+};
+
+let response = http.post(url, data, params);
+
+console.log(`response: ${response}`);
 
 // The following section contains configuration options for execution of this
 // test script in Grafana Cloud.
