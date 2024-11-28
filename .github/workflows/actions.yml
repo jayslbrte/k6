@@ -44,4 +44,4 @@ jobs:
           brew install gcc
       - name: Run K6 Load Test
         run: |
-          k6 run pestore_k6.js
+          k6 run petstore_k6.js
