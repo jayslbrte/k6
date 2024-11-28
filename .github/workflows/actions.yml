@@ -1,0 +1,47 @@
+name: Run K6 Test
+'on':
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  k6-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Homebrew
+        run: >
+          sudo apt-get update
+
+          sudo apt-get install -y build-essential procps curl file git
+
+          /bin/bash -c "$(curl -fsSL
+          https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+          echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>
+          ~/.profile
+
+          echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>
+          ~/.bashrc
+
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+      - name: Install K6
+        run: >
+          brew install k6
+
+          echo >> /home/runner/.bashrc 
+
+          echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>
+          /home/runner/.bashrc 
+
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" 
+
+          sudo apt-get install build-essential
+
+          brew install gcc
+      - name: Run K6 Load Test
+        run: |
+          k6 run pestore_k6.js
