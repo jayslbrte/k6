@@ -14,7 +14,7 @@ This is a performance testing exercise using postman collections
 
 - https://medium.com/10ms-technology-blog/load-testing-made-easy-with-k6-using-faker-library-and-csv-files-c997d48fb6e2
 
-## How to run the test/s
+## How to setup repo
 ```bash
     npm install
 ```
