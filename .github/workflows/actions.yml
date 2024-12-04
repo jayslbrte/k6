@@ -28,6 +28,10 @@ jobs:
           ~/.bashrc
 
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+          brew --version
+          brew install wget
+
       - name: Install K6
         run: >
           brew install k6
@@ -44,4 +48,4 @@ jobs:
           brew install gcc
       - name: Run K6 Load Test
         run: |
-          k6 run petstore_k6.js
+          k6 run ./tests/petstore_k6.js
