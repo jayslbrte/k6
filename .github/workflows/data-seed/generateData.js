@@ -1,6 +1,6 @@
 import { faker } from "https://esm.sh/@faker-js/faker@v9.2.0";
 
-export const generateData = () => ({
+export const generatePetData = () => ({
   id: faker.number.int({ min: 100, max: 999 }),
   category: {
     id: faker.number.int({ min: 100, max: 999 }),
