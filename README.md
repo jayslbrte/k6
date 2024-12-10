@@ -1,6 +1,6 @@
 # K6 performance testing
 
-This is a performance testing exercise using postman collections
+This is a performance testing exercise utilising K6 by Grafana
 
 ## API source: https://petstore.swagger.io/#/
 - K6 Built-in metrics https://grafana.com/docs/k6/latest/using-k6/metrics/reference/
