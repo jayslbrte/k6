@@ -5,7 +5,7 @@ This is a performance testing exercise utilising K6 by Grafana
 ## API source: https://petstore.swagger.io/#/
 - K6 Built-in metrics https://grafana.com/docs/k6/latest/using-k6/metrics/reference/
 
-##tool used for performance:
+## tech stack used for this exercise
 
 - https://grafana.com/docs/k6/latest/get-started/running-k6/
 - https://fakerjs.dev/api/number.html
